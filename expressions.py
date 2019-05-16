@@ -49,8 +49,8 @@ while True:
             break
 
     for (x, y, w, h) in faces:
-        gray = cv2.resize(gray[y:y+h, x:x+w], (350, 350))
-        pred, conf = fisher_face.predict(gray)
+        gray2 = cv2.resize(gray[y:y+h, x:x+w], (350, 350))
+        pred, conf = fisher_face.predict(gray2)
         # print(pred, conf)
         cv2.rectangle(frame, (x, y), (x+w, y + h), (0, 200, 0), 2)
         cv2.rectangle(frame, (x, y - 30), (x+w, y), (0, 200, 0), -1)
